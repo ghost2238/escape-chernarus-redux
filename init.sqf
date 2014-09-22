@@ -365,10 +365,10 @@ if (!isNull player) then {
                 }; 
                 
                 // Only show this on non ported missions
-                if (worldName == "Chernarus") then {
+                /*if (worldName == "Chernarus") then {
                     sleep 20;
                     [name player + "! Please tell me about your Escape Chernarus experience on the BIS Forum or at Armaholic.com! Thank you, and enjoy the mission!", true] call drn_fnc_CL_ShowTitleTextLocal;
-                };
+                };*/
             };
         };
 

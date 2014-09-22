@@ -24,16 +24,16 @@ class Mission
 	randomSeed=1261270;
 	class Intel
 	{
-		briefingName="co08 Escape Chernarus [1.8]";
+		briefingName="co08 Escape Chernarus [1.8] - Redux 0.1";
 		briefingDescription="Caught in enemy territory trying to escape!";
 		resistanceEast=1;
 		startWeather=0.2605564;
 		startFog=0.12567772;
 		forecastWeather=0.3805666;
 		forecastFog=0.1205344;
-		year=2008;
-		month=10;
-		day=11;
+		year=2014;
+		month=09;
+		day=21;
 		hour=8;
 		minute=0;
 	};

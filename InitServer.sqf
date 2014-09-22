@@ -14,13 +14,13 @@ _useMotorizedSearchGroup = true;
 _useVillagePatrols = true;
 _useMilitaryTraffic = true;
 _useAmbientInfantry = true;
-_useSearchChopper = true;
+_useSearchChopper = (paramsArray select 6 == 1);
 _useRoadBlocks = true;
 
 _guardsExist = true;
 _comCenGuardsExist = true;
 _guardsAreArmed = true;
-_guardLivesLong = true;
+_guardLivesLong = false;
 
 // Debug Variables
 
@@ -175,8 +175,8 @@ if (true) then {
     {
         case 1: // 1-2 players
         {
-            _minEnemies = 8;
-            _maxEnemies = 12;
+            _minEnemies = 2;
+            _maxEnemies = 4;
         };
         case 2: // 3-5 players
         {
@@ -369,7 +369,7 @@ if (_useMotorizedSearchGroup) then {
             
             if (random 100 > 75) then {
                 _this addWeapon "ItemMap";
-                if (random 100 > 67) then {
+                if (random 100 => 10) then {
                     _this addWeapon "ItemCompass";
                 };
             };
@@ -405,7 +405,7 @@ if (_useMotorizedSearchGroup) then {
             case 1: // 1-2 players
             {
                 _minEnemiesPerGroup = 2;
-                _maxEnemiesPerGroup = 4;
+                _maxEnemiesPerGroup = 3;
                 _groupsPerSqkm = 1;
             };
             case 2: // 3-5 players
@@ -725,7 +725,7 @@ if (_useSearchChopper) then {
         sleep (30 + floor (random 40));
     }
     else {
-        sleep 10;
+        sleep 5;
     };
     
     // Guard passes out
