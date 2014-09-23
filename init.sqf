@@ -11,7 +11,7 @@ if (!isServer && isNull player) then
 // Developer Variables
 
 _useRevive = true;
-_showIntro = true;
+_showIntro = (paramsArray select 7 == 1);
 
 // Debug Variables
 
@@ -314,7 +314,7 @@ if (!isNull player) then {
                 } foreach units group player;
             };
             
-            while {!([drn_startPos] call drn_fnc_Escape_AllPlayersOnStartPos) && !drn_escapeHasStarted} do {
+            while {!([drn_startPos] call drn_fnc_Escape_AllPlayersOnStartPos) && isNil "drn_escapeHasStarted"} do {
                 sleep 0.1;
             };
             

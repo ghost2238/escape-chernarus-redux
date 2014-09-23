@@ -379,12 +379,14 @@ while {true} do
 		//////////////////////////////////////////////////////////////////////////////////////////////////
 				
 		//Added for ACE mod rucks 131209
-		_hasruck = _name call ACE_Sys_Ruck_fnc_hasRuck;
-		if (_hasruck) then
-		{	
-			_ruckMags = _name getVariable "ACE_RuckMagContents";
-			_ruckWeps = _name getVariable "ACE_RuckWepContents";
-		};
+		if (!isNil "ACE_Sys_Ruck_fnc_hasRuck") then {
+			_hasruck = _name call ACE_Sys_Ruck_fnc_hasRuck;
+			if (_hasruck) then
+			{	
+				_ruckMags = _name getVariable "ACE_RuckMagContents";
+				_ruckWeps = _name getVariable "ACE_RuckWepContents";
+			};
+		}
 							
 		//add revive action for when player gets in range of unconcious unit
 		if (count (nearestObjects [_name, [_can_be_revived, _can_be_revived_2], 2]) > 1 && _name == player) then 

@@ -8,14 +8,14 @@ private ["_enemyMinSkill", "_enemyMaxSkill", "_searchChopperSearchTimeMin", "_se
 
 _useRandomStartPos = true;
 _useEscapeSurprises = true;
-_useAmmoDepots = true;
+_useAmmoDepots = (paramsArray select 9 == 1);
 _useSearchLeader = true;
 _useMotorizedSearchGroup = true;
-_useVillagePatrols = true;
+_useVillagePatrols = (paramsArray select 10 == 1);
 _useMilitaryTraffic = true;
 _useAmbientInfantry = true;
 _useSearchChopper = (paramsArray select 6 == 1);
-_useRoadBlocks = true;
+_useRoadBlocks =  (paramsArray select 8 == 1);
 
 _guardsExist = true;
 _comCenGuardsExist = true;
@@ -369,7 +369,7 @@ if (_useMotorizedSearchGroup) then {
             
             if (random 100 > 75) then {
                 _this addWeapon "ItemMap";
-                if (random 100 => 10) then {
+                if (random 100 >= 10) then {
                     _this addWeapon "ItemCompass";
                 };
             };
